@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<style>
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-size: 100%;
+	font-family: arial narrow;
+	color: black;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-fluid {
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+}
+
+.grid-960 {
+	width: 960px;
+	margin: auto;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.grid-1200 {
+	width: 1200px;
+	margin: auto;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	top: 10px;
+	background-color: white;
+	grid-column: span 12;
+	height: 80px;
+	padding: .5rem;
+	border: solid 1px #e6e6e6;
+}
+
+header img {
+	max-height: 100%;
+}
+
+header nav {
+	display: flex;
+	align-items: flex-end;
+	border-width: 0px;
+}
+
+header nav a {
+	display: inline-block;
+	padding-left: 15px;
+	text-decoration: none;
+	color: gray;
+	font-size: .9rem;
+}
+
+header nav a:hover {
+	color: #ed1c24;
+	text-decoration: underline;
+}
+
+nav {
+	grid-column: span 2;
+	grid-row: span 2;
+	padding: .5rem;
+	border: solid 1px #e6e6e6;
+}
+
+main {
+	grid-column: span 7;
+	padding: .5rem;
+	border: solid 1px #e6e6e6;
+}
+
+aside {
+	grid-column: span 3;
+	padding: .5rem;
+	border: solid 1px #e6e6e6;
+}
+
+footer {
+	grid-column: span 10;
+	padding: .5rem;
+	border: solid 1px #e6e6e6;
+}
+
+aside img {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+aside img: last-of-type {
+	margin-bottom: 0px;
+}
+
+hr {
+	height: 1px;
+	width: 60%;
+	border-width: 0px;
+	background-color: #e6e6e6;
+}
+
+header:hover,
+nav.main:hover,
+main:hover,
+aside:hover,
+footer:hover {
+	box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+}
+
+h1,
+h2,
+h3 {
+	padding: 0px;
+	margin: 0px;
+	top: 0px;
+}
+
+h1 {
+	position: relative;
+	top: -5px;
+	font-size: 2rem;
+	color: #ed1c24;
+}
+
+h3 {
+	font-size: .9rem;
+	line-height: .9rem;
+}
+
+article {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: 25px;
+	font-size: .9rem;
+	line-height: 1.2rem;
+}
+
+article p {
+	max-width: 305px;
+}
+
+article img {
+	position: absolute;
+	right: 0px;
+	max-width: 200px;
+	margin-left: 30px;
+}
+
+article h1 {
+	padding: 0px;
+	margin: 0px;
+	top: 0px;
+	font-size: 1.3rem;
+	color: black;
+}
+
+article p:first-of-type {
+	font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	body {
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.grid-960 {
+		display: flex;
+		flex-direction: column;
+		width: calc(100% - 15px);
+		margin-right: 15px;
+	}
+
+	header,
+	nav,
+	main,
+	aside {
+		top: 0px;
+		margin-bottom: 10px;
+	}
+
+
+		header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: auto;
+	}
+
+	header img {
+		display: block;
+		margin: auto;
+		max-width: 100px;
+		max-height: 70px;
+	}
+
+	header nav a {
+		margin-bottom: -20px;
+	}
+
+	nav {
+		display: none;
+	}
+
+	aside img {
+		width: 100%;
+		align: center;
+	}
+
+	article {
+		flex-direction: column;
+	}
+
+	article img {
+		position: relative;
+		margin: 0px 0px 10px 0px;
+		max-width: 100%;
+	}
+
+	footer {
+		margin-bottom: 20px;
+	}
+}
+</style>
+</head>
+<body>
+
+<div class="grid grid-960">
+
+	<header>
+		<img src="images/logo.jpg" />
+		<nav>
+			<a href="#">Info</a>
+			<a href="#">Products</a>
+			<a href="#">Services</a>
+			<a href="#">Contacts</a>
+		</nav>
+	</header>
+
+	<nav class="main"><h3>SECUNDARY NAVIGATION</h3></nav>
+
+	<main>
+		<h1>PRODUCTS</h1>
+		<article>
+			<img src="images/article-01.png" />
+			<h1>Segway-Ninebot ES2</h1>
+			<p>The ES2 KickScooter kicks the ES1’s performance up a notch delivering more speed and extended range while still being foldable and lightweight. It caters to commuters and recreational riders look for an extra edge.</p>
+			<p>The Ninebot KickScooter by Segway (ES2) can go up to 15 mph (25km/h) and travel up to 15 miles* (25 km). Its rear shock absorption ensures a comfortable ride and the customizable ambient and rear lights are not only fun, but allow riders to be seen in low light.</p>
+		</article>
+
+	<hr />
+		<article>
+			<img src="images/article-02.jpg" />
+			<h1>LED lights strip</h1>
+			<p>Unique design by adding IC in light strip, a variety of colors and brightness can be changed simultaneously with frequency changes</p>
+			<p>Smart phone App control, easily dim and switch no matter how far away from the light; with built-in controller, simple to turn on/off by one press on the button; 2 methods to control, offer an intelligent lifestyle.</p>
+		</article>
+
+	</main>
+
+	<aside>
+		<img src="images/ad-01.jpg" />
+		<img src="images/ad-02.jpg" />
+		<img src="images/ad-03.png" />
+</aside>
+
+	<footer>FOOTER</footer>
+</div>
+
+</body>
+</html>
